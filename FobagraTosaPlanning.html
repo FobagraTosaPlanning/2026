@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Je choisis mon lieu de formation</title>
+
+        <style>
+
+            /* =========================
+               VARIABLES
+            ========================= */
+
+            :root {
+                --rouge: #F495DB;
+                --rouge-fonce: #EF6BCC;
+
+                --sapiens: #95ABF4;
+                --adw: #95F4AE;
+                --foba:  #F4DE95;
+
+                --texte: #252525;
+                --gris: #666;
+                --fond: #f5f5f5;
+                --blanc: #ffffff;
+                --bordure: #dddddd;
+
+                --radius: 16px;
+            }
+
+
+            /* =========================
+               BASE
+            ========================= */
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                background: var(--fond);
+                color: var(--texte);
+                line-height: 1.5;
+            }
+
+            main {
+                width: min(1100px, 92%);
+                margin-inline: auto;
+                padding: 2rem 0 4rem;
+            }
+
+            h1,
+            h2,
+            p {
+                margin-top: 0;
+            }
+
+
+            /* =========================
+               TITRE
+            ========================= */
+
+            .intro {
+                background: var(--rouge);
+                color: var(--texte);
+                padding: 2rem;
+                border-radius: var(--radius);
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+
+            .intro h1 {
+                font-size: clamp(1.8rem, 5vw, 3rem);
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+            }
+
+            .etapes {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(max-content, 1fr));
+                gap: .75rem;
+            }
+
+            .etape {
+                background: rgba(255,255,255,.15);
+                padding: .8rem;
+                border-radius: 10px;
+                font-weight: 700;
+            }
+
+
+            /* =========================
+               CARTES
+            ========================= */
+
+            .formations {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+            }
+
+            .card {
+                background: var(--blanc);
+                border-radius: var(--radius);
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0,0,0,.08);
+                border: 1px solid var(--bordure);
+            }
+
+            .card-header {
+                padding: 1.2rem;
+                color: var(--texte);
+            }
+
+            .card-header h2 {
+                margin-bottom: .2rem;
+                font-size: 1.35rem;
+            }
+
+            .card-header p {
+                margin-bottom: 0;
+                opacity: .95;
+            }
+
+            .sapiens .card-header {
+                background: var(--sapiens);
+            }
+
+            .atelier .card-header {
+                background: var(--adw);
+            }
+
+            .fobagra .card-header {
+                background: var(--foba);
+                color: var(--texte);
+            }
+
+            .card-content {
+                padding: 1.25rem;
+            }
+
+
+            /* =========================
+               INFORMATIONS
+            ========================= */
+
+            .info {
+                margin-bottom: 1.2rem;
+            }
+
+            .info:last-child {
+                margin-bottom: 0;
+            }
+
+            .label {
+                display: block;
+                font-size: .82rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: .04em;
+                color: var(--gris);
+                margin-bottom: .25rem;
+            }
+
+            .value {
+                font-size: 1.05rem;
+                font-weight: 700;
+            }
+
+            .dates {
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+            }
+
+
+            /* =========================
+               À RETENIR
+            ========================= */
+
+            .memo {
+                margin-top: 1.25rem;
+                padding: 1rem;
+                border-radius: 10px;
+                background: #f1f1f1;
+                font-weight: 700;
+            }
+
+            .memo strong {
+                display: block;
+                margin-top: .25rem;
+                font-size: 1.05rem;
+            }
+
+
+            /* =========================
+               MÉMO GLOBAL
+            ========================= */
+
+            .essentiel {
+                background: var(--blanc);
+                margin-top: 1.5rem;
+                padding: 1.5rem;
+                border-radius: var(--radius);
+                border: 1px solid var(--bordure);
+            }
+
+            .essentiel h2 {
+                color: var(--rouge);
+                margin-bottom: 1rem;
+            }
+
+            .memo-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .memo-table th,
+            .memo-table td {
+                text-align: left;
+                padding: .8rem;
+                border-bottom: 1px solid var(--bordure);
+            }
+
+            .memo-table th {
+                background: #f1f1f1;
+            }
+
+
+            /* =========================
+               MÉMO RAPIDE
+            ========================= */
+
+            .memo-rapide {
+                margin-top: 1.5rem;
+                padding: 1.5rem;
+                background: #252525;
+                color: white;
+                border-radius: var(--radius);
+            }
+
+            .memo-rapide h2 {
+                margin-bottom: 1rem;
+            }
+
+            .ligne-memo {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                padding: .7rem 0;
+                font-weight: 700;
+                border-bottom: 1px solid rgba(255,255,255,.2);
+            }
+
+            .ligne-memo:last-child {
+                border-bottom: none;
+            }
+
+            .couleur {
+                font-size: 1.3rem;
+            }
+
+
+            /* =========================
+               RESPONSIVE
+            ========================= */
+
+            @media (max-width: 850px) {
+
+                .etapes {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .formations {
+                    grid-template-columns: 1fr;
+                }
+
+            }
+
+
+            @media (max-width: 550px) {
+
+                main {
+                    width: 94%;
+                    padding-top: 1rem;
+                }
+
+                .intro {
+                    padding: 1.3rem;
+                }
+
+                .intro h1 {
+                    font-size: 1.8rem;
+                }
+
+                .etapes {
+                    grid-template-columns: 1fr;
+                }
+
+                .memo-table th,
+                .memo-table td {
+                    padding: .65rem .45rem;
+                    font-size: .9rem;
+                }
+
+            }
+
+        </style>
+    </head>
+
+
+    <body>
+
+        <main>
+
+            <!-- =========================
+                 INTRODUCTION
+            ========================== -->
+
+            <section class="intro">
+
+                <h1>🧭 Je choisis mon lieu de formation</h1>
+                <h2>Tosa digcomp - compétences numériques de base</h2>
+                <div class="etapes">
+
+                    <div class="etape">
+                        👉 1. Où ?
+                    </div>
+
+                    <div class="etape">
+                        👉 2. Quand est la séance d’info ?
+                    </div>
+
+                    <div class="etape">
+                        👉 3. Quand commence la formation ?
+                    </div>
+
+                    <div class="etape">
+                        👉 4. Quels jours ?
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 FORMATIONS
+            ========================== -->
+
+            <section class="formations">
+
+
+                <!-- SAPIENS -->
+
+                <article class="card sapiens">
+
+                    <header class="card-header">
+
+                        <h2>🔵 EPN SAPIENS</h2>
+
+                        <p>SAINT-JOSSE</p>
+
+                    </header>
+
+
+                    <div class="card-content">
+
+                        <div class="info">
+
+                            <span class="label">
+                                📍 Adresse
+                            </span>
+
+                            <div class="value">
+                                Rue du Mérinos 1b
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                ℹ️ Séance d’info
+                            </span>
+
+                            <div class="dates value">
+                                <span>➡️ 25 août — matin</span>
+                                <span>➡️ 1er septembre — matin</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                🎓 Formation
+                            </span>
+
+                            <div class="value">
+                                18 septembre → 11 décembre 2026
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                📅 Jours
+                            </span>
+
+                            <div class="value">
+                                Mercredi + Vendredi
+                            </div>
+
+                        </div>
+
+
+                        <div class="memo">
+
+                            🧠 À retenir :
+
+                            <strong>
+                                SAPIENS = mercredi + vendredi
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ATELIER DU WEB -->
+
+                <article class="card atelier">
+
+                    <header class="card-header">
+
+                        <h2>🟢 ATELIER DU WEB</h2>
+
+                        <p>SAINT-GILLES</p>
+
+                    </header>
+
+
+                    <div class="card-content">
+
+                        <div class="info">
+
+                            <span class="label">
+                                📍 Adresse
+                            </span>
+
+                            <div class="value">
+                                Rue du Fort 37
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                ℹ️ Séance d’info
+                            </span>
+
+                            <div class="dates value">
+                                <span>➡️ 31 août — matin</span>
+                                <span>➡️ 7 septembre — matin</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                🎓 Formation
+                            </span>
+
+                            <div class="value">
+                                5 octobre → 3 décembre 2026
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                📅 Jours
+                            </span>
+
+                            <div class="value">
+                                Lundi + Mardi + Jeudi
+                            </div>
+
+                        </div>
+
+
+                        <div class="memo">
+
+                            🧠 À retenir :
+
+                            <strong>
+                                ATELIER DU WEB = lundi + mardi + jeudi
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOBAGRA -->
+
+                <article class="card fobagra">
+
+                    <header class="card-header">
+
+                        <h2>🟡 FOBAGRA</h2>
+
+                        <p>SAINT-JOSSE</p>
+
+                    </header>
+
+
+                    <div class="card-content">
+
+                        <div class="info">
+
+                            <span class="label">
+                                📍 Adresse
+                            </span>
+
+                            <div class="value">
+                                Rue du Méridien 20
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                ℹ️ Séance d’info
+                            </span>
+
+                            <div class="dates value">
+                                <span>➡️ 25 août — après-midi</span>
+                                <span>➡️ 1er septembre — après-midi</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                🎓 Formation
+                            </span>
+
+                            <div class="value">
+                                6 octobre → 10 décembre 2026
+                            </div>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <span class="label">
+                                📅 Jours
+                            </span>
+
+                            <div class="value">
+                                Mardi + Jeudi
+                            </div>
+
+                        </div>
+
+
+                        <div class="memo">
+
+                            🧠 À retenir :
+
+                            <strong>
+                                FOBAGRA = mardi + jeudi
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =========================
+                 ESSENTIEL
+            ========================== -->
+
+            <section class="essentiel">
+
+                <h2>🧩 Je retiens l’essentiel</h2>
+
+                <table class="memo-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>🏫 Lieu</th>
+                            <th>📅 Jours</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>🔵 <strong>Sapiens</strong></td>
+                            <td><strong>Mercredi + Vendredi</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>🟢 <strong>Atelier du Web</strong></td>
+                            <td><strong>Lundi + Mardi + Jeudi</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>🟡 <strong>Fobagra</strong></td>
+                            <td><strong>Mardi + Jeudi</strong></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+            <!-- =========================
+                 MÉMO RAPIDE
+            ========================== -->
+
+            <section class="memo-rapide">
+
+                <h2>🎯 Mémo</h2>
+
+                <div class="ligne-memo">
+                    <span class="couleur">🔵</span>
+                    <span>SAPIENS → MER / VEN</span>
+                </div>
+
+                <div class="ligne-memo">
+                    <span class="couleur">🟢</span>
+                    <span>ATELIER DU WEB → LUN / MAR / JEU</span>
+                </div>
+
+                <div class="ligne-memo">
+                    <span class="couleur">🟡</span>
+                    <span>FOBAGRA → MAR / JEU</span>
+                </div>
+
+            </section>
+
+        </main>
+
+    </body>
+</html>
