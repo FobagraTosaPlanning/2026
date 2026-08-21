@@ -308,6 +308,247 @@
 
             }
 
+            /* =========================================================
+   🖨️ VERSION IMPRESSION — A4 PAYSAGE
+   ========================================================= */
+
+            @media print {
+
+                @page {
+                    size: A4 landscape;
+                    margin: 10mm;
+                }
+
+                /* ---------- BASE ---------- */
+
+                html,
+                body {
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    width: 100%;
+                    background: #fff !important;
+                    color: #252525 !important;
+                    font-size: 9pt;
+                    line-height: 1.3;
+                }
+
+                * {
+                    box-sizing: border-box;
+                    box-shadow: none !important;
+                    text-shadow: none !important;
+                }
+
+                main {
+                    width: 100% !important;
+                    max-width: none !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
+
+
+                /* ---------- INTRO ---------- */
+
+                .intro {
+                    padding: 7mm !important;
+                    margin-bottom: 5mm !important;
+                    border-radius: 8px !important;
+                    border: 1px solid #999;
+                    background: #f3dce9 !important;
+                    color: #252525 !important;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+                .intro h1 {
+                    font-size: 21pt !important;
+                    margin-bottom: 2mm !important;
+                }
+
+                .intro h2 {
+                    font-size: 11pt !important;
+                    margin-bottom: 4mm !important;
+                }
+
+                .etapes {
+                    grid-template-columns: repeat(4, 1fr) !important;
+                    gap: 3mm !important;
+                }
+
+                .etape {
+                    padding: 3mm !important;
+                    font-size: 8.5pt;
+                    background: rgba(255,255,255,.5) !important;
+                    border: 1px solid rgba(0,0,0,.12);
+                }
+
+
+                /* ---------- LES 3 LIEUX ---------- */
+
+                .formations {
+                    display: grid !important;
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 5mm !important;
+                    align-items: start;
+                }
+
+                .card {
+                    border: 1px solid #aaa !important;
+                    border-radius: 8px !important;
+                    overflow: hidden;
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
+
+                .card-header {
+                    padding: 4mm !important;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+                .card-header h2 {
+                    font-size: 12pt !important;
+                    margin-bottom: 1mm !important;
+                }
+
+                .card-header p {
+                    font-size: 8.5pt;
+                }
+
+                .sapiens .card-header {
+                    background: #dce3f8 !important;
+                }
+
+                .atelier .card-header {
+                    background: #dcf5e3 !important;
+                }
+
+                .fobagra .card-header {
+                    background: #f8edcf !important;
+                }
+
+                .card-content {
+                    padding: 4mm !important;
+                }
+
+
+                /* ---------- INFORMATIONS ---------- */
+
+                .info {
+                    margin-bottom: 3mm !important;
+                }
+
+                .label {
+                    font-size: 7.5pt !important;
+                    margin-bottom: .5mm !important;
+                }
+
+                .value {
+                    font-size: 9pt !important;
+                }
+
+                .dates {
+                    gap: .5mm !important;
+                }
+
+
+                /* ---------- MÉMO DANS CHAQUE CARTE ---------- */
+
+                .memo {
+                    margin-top: 4mm !important;
+                    padding: 3mm !important;
+                    border-radius: 5px !important;
+                    background: #f1f1f1 !important;
+                    border: 1px solid #ddd;
+                    font-size: 8pt;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+                .memo strong {
+                    font-size: 9pt !important;
+                }
+
+
+                /* ---------- ESSENTIEL ---------- */
+
+                .essentiel {
+                    margin-top: 5mm !important;
+                    padding: 4mm !important;
+                    border-radius: 8px !important;
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
+
+                .essentiel h2 {
+                    font-size: 12pt !important;
+                    margin-bottom: 2mm !important;
+                }
+
+                .memo-table th,
+                .memo-table td {
+                    padding: 2mm !important;
+                    font-size: 8.5pt !important;
+                }
+
+                .memo-table th {
+                    background: #eeeeee !important;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+
+                /* ---------- MÉMO RAPIDE ---------- */
+
+                .memo-rapide {
+                    margin-top: 4mm !important;
+                    padding: 4mm !important;
+                    border-radius: 8px !important;
+                    background: #252525 !important;
+                    color: white !important;
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+                .memo-rapide h2 {
+                    font-size: 11pt !important;
+                    margin-bottom: 1mm !important;
+                }
+
+                .ligne-memo {
+                    display: inline-flex !important;
+                    width: 32%;
+                    padding: 1mm 2mm !important;
+                    border-bottom: none !important;
+                    font-size: 8pt;
+                }
+
+                .couleur {
+                    font-size: 1rem;
+                }
+
+
+                /* ---------- ÉVITER LES COUPURES ---------- */
+
+                .intro,
+                .formations,
+                .card,
+                .essentiel,
+                .memo-rapide {
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
+
+
+                /* ---------- LIENS ---------- */
+
+                a {
+                    color: inherit !important;
+                    text-decoration: none !important;
+                }
+            }
+
         </style>
     </head>
 
