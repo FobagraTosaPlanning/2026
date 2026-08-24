@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Je choisis mon lieu de formation</title>
+        <title>TOSA DigComp à BXL</title>
 
         <style>
 
@@ -123,6 +123,7 @@
             .card-header p {
                 margin-bottom: 0;
                 opacity: .95;
+                text-align: right;
             }
 
             .sapiens .card-header {
@@ -308,246 +309,368 @@
 
             }
 
+
+            /* =========================
+   PARTENAIRES
+   Information complémentaire
+========================= */
+
+            .partners {
+                margin-top: 2rem;
+                padding: 1.25rem 1.5rem;
+                background: #fafafa;
+                border: 1px solid #e5e5e5;
+                border-radius: var(--radius);
+                color: var(--gris);
+            }
+
+            /* Introduction du bloc */
+
+            .partners > .card-header:first-child {
+                padding: 0 0 1rem;
+                background: transparent;
+                border-bottom: 1px solid #e5e5e5;
+                margin-bottom: 1rem;
+            }
+
+            .partners > .card-header:first-child h3 {
+                margin: 0 0 .25rem;
+                color: var(--rouge-fonce);
+                font-size: 1.15rem;
+            }
+
+            .partners > .card-header:first-child p {
+                margin: 0;
+                font-size: .9rem;
+            }
+
+
+            /* Chaque partenaire */
+
+            .partners > .card-header:not(:first-child) {
+                padding: .75rem 1rem;
+                margin-top: 1rem;
+                background: #f1f1f1;
+                border-left: 4px solid #ccc;
+                border-radius: 6px 6px 0 0;
+            }
+
+            .partners > .card-header:not(:first-child) h2 {
+                margin: 0;
+                font-size: 1rem;
+            }
+
+            .partners > .card-header:not(:first-child) p {
+                margin: .15rem 0 0;
+                font-size: .8rem;
+                color: var(--gris);
+            }
+
+
+            /* Contenu partenaire */
+
+            .partners .card-content {
+                padding: .9rem 1rem;
+                background: white;
+                border: 1px solid #e5e5e5;
+                border-top: none;
+                border-radius: 0 0 6px 6px;
+            }
+
+            .partners .info {
+                margin-bottom: .75rem;
+            }
+
+            .partners .label {
+                font-size: .72rem;
+            }
+
+            .partners .value {
+                font-size: .9rem;
+                font-weight: 600;
+            }
+
+
+            /* Liens */
+
+            .partners a {
+                color: var(--rouge-fonce);
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+
+            .partners a:hover {
+                color: var(--texte);
+            }
+
+            footer{
+                font-size : .7em;
+                color: gray;
+                text-align: center;
+            }
+
+
+            .session-label {
+                display: inline-block;
+                margin: .25rem 0 .6rem;
+                padding: .2rem .55rem;
+                border-left: 3px solid var(--rouge-fonce);
+                color: var(--rouge-fonce);
+                font-size: .72rem;
+                font-weight: 700;
+                letter-spacing: .08em;
+            }
+
+
             /* =========================================================
    🖨️ VERSION IMPRESSION — A4 PAYSAGE
    ========================================================= */
 
-@media print {
+            @media print {
 
-    @page {
-        size: A4 landscape;
-        margin: 10mm;
-    }
+                @page {
+                    size: A4 landscape;
+                    margin: 10mm;
+                }
 
-    /* ---------- BASE ---------- */
+                /* ---------- BASE ---------- */
 
-    html,
-    body {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100%;
-        background: #fff !important;
-        color: #252525 !important;
-        font-size: 9pt;
-        line-height: 1.3;
-    }
+                html,
+                body {
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    width: 100%;
+                    background: #fff !important;
+                    color: #252525 !important;
+                    font-size: 9pt;
+                    line-height: 1.3;
+                }
 
-    * {
-        box-sizing: border-box;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+                * {
+                    box-sizing: border-box;
+                    box-shadow: none !important;
+                    text-shadow: none !important;
+                }
 
-    main {
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-
-    /* ---------- INTRO ---------- */
-
-    .intro {
-        padding: 7mm !important;
-        margin-bottom: 5mm !important;
-        border-radius: 8px !important;
-        border: 1px solid #999;
-        background: #f3dce9 !important;
-        color: #252525 !important;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
-
-    .intro h1 {
-        font-size: 21pt !important;
-        margin-bottom: 2mm !important;
-    }
-
-    .intro h2 {
-        font-size: 11pt !important;
-        margin-bottom: 4mm !important;
-    }
-
-    .etapes {
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 3mm !important;
-    }
-
-    .etape {
-        padding: 3mm !important;
-        font-size: 8.5pt;
-        background: rgba(255,255,255,.5) !important;
-        border: 1px solid rgba(0,0,0,.12);
-    }
+                main {
+                    width: 100% !important;
+                    max-width: none !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
 
 
-    /* ---------- LES 3 LIEUX ---------- */
+                /* ---------- INTRO ---------- */
 
-    .formations {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 5mm !important;
-        align-items: start;
-    }
+                .intro {
+                    padding: 7mm !important;
+                    margin-bottom: 5mm !important;
+                    border-radius: 8px !important;
+                    border: 1px solid #999;
+                    background: #f3dce9 !important;
+                    color: #252525 !important;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
 
-    .card {
-        border: 1px solid #aaa !important;
-        border-radius: 8px !important;
-        overflow: hidden;
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
+                .intro h1 {
+                    font-size: 21pt !important;
+                    margin-bottom: 2mm !important;
+                }
 
-    .card-header {
-        padding: 4mm !important;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
+                .intro h2 {
+                    font-size: 11pt !important;
+                    margin-bottom: 4mm !important;
+                }
 
-    .card-header h2 {
-        font-size: 12pt !important;
-        margin-bottom: 1mm !important;
-    }
+                .etapes {
+                    grid-template-columns: repeat(4, 1fr) !important;
+                    gap: 3mm !important;
+                }
 
-    .card-header p {
-        font-size: 8.5pt;
-    }
-
-    .sapiens .card-header {
-        background: #dce3f8 !important;
-    }
-
-    .atelier .card-header {
-        background: #dcf5e3 !important;
-    }
-
-    .fobagra .card-header {
-        background: #f8edcf !important;
-    }
-
-    .card-content {
-        padding: 4mm !important;
-    }
+                .etape {
+                    padding: 3mm !important;
+                    font-size: 8.5pt;
+                    background: rgba(255,255,255,.5) !important;
+                    border: 1px solid rgba(0,0,0,.12);
+                }
 
 
-    /* ---------- INFORMATIONS ---------- */
+                /* ---------- LES 3 LIEUX ---------- */
 
-    .info {
-        margin-bottom: 3mm !important;
-    }
+                .formations {
+                    display: grid !important;
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 5mm !important;
+                    align-items: start;
+                }
 
-    .label {
-        font-size: 7.5pt !important;
-        margin-bottom: .5mm !important;
-    }
+                .card {
+                    border: 1px solid #aaa !important;
+                    border-radius: 8px !important;
+                    overflow: hidden;
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
 
-    .value {
-        font-size: 9pt !important;
-    }
+                .card-header {
+                    padding: 4mm !important;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
 
-    .dates {
-        gap: .5mm !important;
-    }
+                .card-header h2 {
+                    font-size: 12pt !important;
+                    margin-bottom: 1mm !important;
+                }
 
+                .card-header p {
+                    font-size: 8.5pt;
+                }
 
-    /* ---------- MÉMO DANS CHAQUE CARTE ---------- */
+                .sapiens .card-header {
+                    background: #dce3f8 !important;
+                }
 
-    .memo {
-        margin-top: 4mm !important;
-        padding: 3mm !important;
-        border-radius: 5px !important;
-        background: #f1f1f1 !important;
-        border: 1px solid #ddd;
-        font-size: 8pt;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
+                .atelier .card-header {
+                    background: #dcf5e3 !important;
+                }
 
-    .memo strong {
-        font-size: 9pt !important;
-    }
+                .fobagra .card-header {
+                    background: #f8edcf !important;
+                }
 
-
-    /* ---------- ESSENTIEL ---------- */
-
-    .essentiel {
-        margin-top: 5mm !important;
-        padding: 4mm !important;
-        border-radius: 8px !important;
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
-
-    .essentiel h2 {
-        font-size: 12pt !important;
-        margin-bottom: 2mm !important;
-    }
-
-    .memo-table th,
-    .memo-table td {
-        padding: 2mm !important;
-        font-size: 8.5pt !important;
-    }
-
-    .memo-table th {
-        background: #eeeeee !important;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
+                .card-content {
+                    padding: 4mm !important;
+                }
 
 
-    /* ---------- MÉMO RAPIDE ---------- */
 
-    .memo-rapide {
-        margin-top: 4mm !important;
-        padding: 4mm !important;
-        border-radius: 8px !important;
-        background: #252525 !important;
-        color: white !important;
-        break-inside: avoid;
-        page-break-inside: avoid;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
+                /* ---------- INFORMATIONS ---------- */
 
-    .memo-rapide h2 {
-        font-size: 11pt !important;
-        margin-bottom: 1mm !important;
-    }
+                .info {
+                    margin-bottom: 3mm !important;
+                }
 
-    .ligne-memo {
-        display: inline-flex !important;
-        width: 32%;
-        padding: 1mm 2mm !important;
-        border-bottom: none !important;
-        font-size: 8pt;
-    }
+                .label {
+                    font-size: 7.5pt !important;
+                    margin-bottom: .5mm !important;
+                }
 
-    .couleur {
-        font-size: 1rem;
-    }
+                .value {
+                    font-size: 9pt !important;
+                }
+
+                .dates {
+                    gap: .5mm !important;
+                }
 
 
-    /* ---------- ÉVITER LES COUPURES ---------- */
+                /* ---------- MÉMO DANS CHAQUE CARTE ---------- */
 
-    .intro,
-    .formations,
-    .card,
-    .essentiel,
-    .memo-rapide {
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
+                .memo {
+                    margin-top: 4mm !important;
+                    padding: 3mm !important;
+                    border-radius: 5px !important;
+                    background: #f1f1f1 !important;
+                    border: 1px solid #ddd;
+                    font-size: 8pt;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+                .memo strong {
+                    font-size: 9pt !important;
+                }
 
 
-    /* ---------- LIENS ---------- */
+                /* ---------- ESSENTIEL ---------- */
 
-    a {
-        color: inherit !important;
-        text-decoration: none !important;
-    }
-}
+                .essentiel {
+                    margin-top: 5mm !important;
+                    padding: 4mm !important;
+                    border-radius: 8px !important;
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
+
+                .essentiel h2 {
+                    font-size: 12pt !important;
+                    margin-bottom: 2mm !important;
+                }
+
+                .memo-table th,
+                .memo-table td {
+                    padding: 2mm !important;
+                    font-size: 8.5pt !important;
+                }
+
+                .memo-table th {
+                    background: #eeeeee !important;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+
+                /* ---------- MÉMO RAPIDE ---------- */
+
+                .memo-rapide {
+                    margin-top: 4mm !important;
+                    padding: 4mm !important;
+                    border-radius: 8px !important;
+                    background: #252525 !important;
+                    color: white !important;
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+                .memo-rapide h2 {
+                    font-size: 11pt !important;
+                    margin-bottom: 1mm !important;
+                }
+
+                .ligne-memo {
+                    display: inline-flex !important;
+                    width: 32%;
+                    padding: 1mm 2mm !important;
+                    border-bottom: none !important;
+                    font-size: 8pt;
+                }
+
+                .couleur {
+                    font-size: 1rem;
+                }
+
+
+                /* ---------- ÉVITER LES COUPURES ---------- */
+
+                .intro,
+                .formations,
+                .card,
+                .essentiel,
+                .memo-rapide {
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
+
+                /* ---------- NE PAS IMPRIMER MEMO FORMATORS ---------- */
+                .essentiel, 
+                .memo-rapide, 
+                .partners {
+                    display: none;
+                }
+
+
+                /* ---------- LIENS ---------- */
+
+                a {
+                    color: inherit !important;
+                    text-decoration: none !important;
+                }
+            }
+
         </style>
     </head>
 
@@ -588,10 +711,10 @@
 
 
             <!-- =========================
-                 FORMATIONS
+                 FORMATIONS avec FOBAGRA 
             ========================== -->
 
-            <section class="formations">
+            <section class="formations avec Fobagra">
 
 
                 <!-- SAPIENS -->
@@ -657,6 +780,16 @@
 
                             <div class="value">
                                 Mercredi + Vendredi
+                            </div>
+
+                        </div>
+                        <div class="info">
+
+                            <span class="label">
+                                🕘 Horaire
+                            </span>
+                            <div class="value">
+                                9h - 12h
                             </div>
 
                         </div>
@@ -744,6 +877,17 @@
 
                         </div>
 
+                        <div class="info">
+
+                            <span class="label">
+                                🕘 Horaire
+                            </span>
+                            <div class="value">
+                                9h30 - 12h30
+                            </div>
+
+                        </div>
+
 
                         <div class="memo">
 
@@ -826,7 +970,16 @@
                             </div>
 
                         </div>
+                        <div class="info">
 
+                            <span class="label">
+                                🕘 Horaire
+                            </span>
+                            <div class="value">
+                                9h - 12h
+                            </div>
+
+                        </div>
 
                         <div class="memo">
 
@@ -914,7 +1067,269 @@
 
             </section>
 
+
+
+            <!-- =========================
+                 FORMATIONS avec autres partenaires du projet 
+            ========================== -->
+
+
+
+            <section class="partners">
+                <div class="partners-intro">
+
+                    <h2>🤝 Bon à savoir</h2>
+
+                    <p>Cette formation est également organisée par plusieurs partenaires :</p>
+
+                </div>
+
+
+
+
+                <header class="card-header">
+
+                    <h2><a href="https://www.bruxellesformation.brussels/catalogue-de-formations/parcours-dinitiation-bureautique-et-certification-tosa/" target="_blank">Bruxelles Formation</a></h2>
+
+                    <p>Bruxelles</p>
+
+
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            Boulevard Bischoffsheim N°22-25
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info">
+
+                        <span class="label">
+                            🎓 Formation
+                        </span>
+
+                        <div class="value">
+                            Les formations sont organisées de manière régulière tout au long de l’année.
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="label">
+                            📅 Jours
+                        </span>
+
+                        <div class="value">
+                            MA + ME + JEU + VEND
+                        </div>
+
+                    </div>
+
+                    <div class="info">
+
+                        <span class="label">
+                            🕘 Horaire
+                        </span>
+                        <div class="value">
+                            Matin : 9h - 12h30 <br>OU<br> Après-midi : 13h - 16h30
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <header class="card-header">
+
+                    <h2>CEFAID</h2>
+
+                    <p>Saint-Gilles</p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            Avenue du parc, 89
+                        </div>
+
+                    </div>
+
+                    <div class="session-label">SESSION 1</div>
+
+                    <div class="info">
+
+                        <span class="label">
+                            🎓 Formation
+                        </span>
+
+                        <div class="value">
+                            28 sept. → 16 oct. 2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="label">
+                            📅 Jours
+                        </span>
+
+                        <div class="value">
+                            LU + MA + ME + JE + VEND
+                        </div>
+                    </div>
+                    <div class="info">
+
+                        <span class="label">
+                            🕘 Horaire
+                        </span>
+                        <div class="value">
+                            9h - 13h
+                        </div>
+
+                    </div>
+
+                    <!--  <hr>  -->
+
+                    <div class="session-label">SESSION 2</div>
+
+                    <div class="info">
+
+                        <span class="label">
+                            🎓 Formation
+                        </span>
+
+                        <div class="value">
+                            23 oct. → 13 nov. 2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="label">
+                            📅 Jours
+                        </span>
+
+                        <div class="value">
+                            LU + MA + ME + JE + VEND
+                        </div>
+                    </div>
+                    <div class="info">
+
+                        <span class="label">
+                            🕘 Horaire
+                        </span>
+                        <div class="value">
+                            13h - 17h
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <header class="card-header">
+
+                    <h2>Arc </h2>
+
+                    <p>Bruxelles </p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            rue de l’Association 20
+                        </div>
+
+                    </div>
+                </div>
+                <header class="card-header">
+
+                    <h2>Koekeltech </h2>
+
+                    <p>Koekelberg </p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            114 rue de l’Eglise Sainte-Anne
+                        </div>
+
+                    </div>
+                </div>
+                <header class="card-header">
+
+                    <h2>Maks</h2>
+
+                    <p>Anderlecht </p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            rue Georges Moreau 110
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
         </main>
 
+        <footer>
+
+            <div>
+                <em><a href="https://fobagra.net/" target="blank" title="FOBAGRA a.s.b.l.">FOBAGRA</a> a.s.b.l. &copy; 2026</em>
+            </div>
+        </footer>
     </body>
 </html>
