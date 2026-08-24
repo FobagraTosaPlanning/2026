@@ -123,6 +123,7 @@
             .card-header p {
                 margin-bottom: 0;
                 opacity: .95;
+                text-align: right;
             }
 
             .sapiens .card-header {
@@ -431,6 +432,7 @@
                 }
 
 
+
                 /* ---------- INFORMATIONS ---------- */
 
                 .info {
@@ -538,6 +540,12 @@
                 .memo-rapide {
                     break-inside: avoid;
                     page-break-inside: avoid;
+                }
+
+                /* ---------- NE PAS IMPRIMER MEMO FORMATORS ---------- */
+                .essentiel,
+                .memo-rapide {
+                    display: none;
                 }
 
 
@@ -869,17 +877,17 @@
                     <tbody>
 
                         <tr>
-                            <td>🔵 <strong>Sapiens</strong> (St-Josse)</td>
+                            <td>🔵 <strong>Sapiens</strong></td>
                             <td><strong>Mercredi + Vendredi</strong></td>
                         </tr>
 
                         <tr>
-                            <td>🟢 <strong>Atelier du Web</strong> (St-Gilles)</td>
+                            <td>🟢 <strong>Atelier du Web</strong></td>
                             <td><strong>Lundi + Mardi + Jeudi</strong></td>
                         </tr>
 
                         <tr>
-                            <td>🟡 <strong>Fobagra</strong> (St-Josse)</td>
+                            <td>🟡 <strong>Fobagra</strong></td>
                             <td><strong>Mardi + Jeudi</strong></td>
                         </tr>
 
