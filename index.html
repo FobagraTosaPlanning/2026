@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Je choisis mon lieu de formation</title>
+		<meta name="author" content="isabelle.nani@fobagra.net">
+        <title>TOSA DigComp à BXL</title>
 
         <style>
 
@@ -309,7 +309,120 @@
 
             }
 
-          /* =========================================================
+
+            /* =========================
+   PARTENAIRES
+   Information complémentaire
+========================= */
+
+            .partners {
+                margin-top: 2rem;
+                padding: 1.25rem 1.5rem;
+                background: #fafafa;
+                border: 1px solid #e5e5e5;
+                border-radius: var(--radius);
+                color: var(--gris);
+            }
+
+            /* Introduction du bloc */
+
+            .partners > .card-header:first-child {
+                padding: 0 0 1rem;
+                background: transparent;
+                border-bottom: 1px solid #e5e5e5;
+                margin-bottom: 1rem;
+            }
+
+            .partners > .card-header:first-child h3 {
+                margin: 0 0 .25rem;
+                color: var(--rouge-fonce);
+                font-size: 1.15rem;
+            }
+
+            .partners > .card-header:first-child p {
+                margin: 0;
+                font-size: .9rem;
+            }
+
+
+            /* Chaque partenaire */
+
+            .partners > .card-header:not(:first-child) {
+                padding: .75rem 1rem;
+                margin-top: 1rem;
+                background: #f1f1f1;
+                border-left: 4px solid #ccc;
+                border-radius: 6px 6px 0 0;
+            }
+
+            .partners > .card-header:not(:first-child) h2 {
+                margin: 0;
+                font-size: 1rem;
+            }
+
+            .partners > .card-header:not(:first-child) p {
+                margin: .15rem 0 0;
+                font-size: .8rem;
+                color: var(--gris);
+            }
+
+
+            /* Contenu partenaire */
+
+            .partners .card-content {
+                padding: .9rem 1rem;
+                background: white;
+                border: 1px solid #e5e5e5;
+                border-top: none;
+                border-radius: 0 0 6px 6px;
+            }
+
+            .partners .info {
+                margin-bottom: .75rem;
+            }
+
+            .partners .label {
+                font-size: .72rem;
+            }
+
+            .partners .value {
+                font-size: .9rem;
+                font-weight: 600;
+            }
+
+
+            /* Liens */
+
+            .partners a {
+                color: var(--rouge-fonce);
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+
+            .partners a:hover {
+                color: var(--texte);
+            }
+
+            footer{
+                font-size : .7em;
+                color: gray;
+                text-align: center;
+            }
+
+
+            .session-label {
+                display: inline-block;
+                margin: .25rem 0 .6rem;
+                padding: .2rem .55rem;
+                border-left: 3px solid var(--rouge-fonce);
+                color: var(--rouge-fonce);
+                font-size: .72rem;
+                font-weight: 700;
+                letter-spacing: .08em;
+            }
+
+
+            /* =========================================================
    🖨️ VERSION IMPRESSION — A4 PAYSAGE
    Version confortable / texte agrandi
    ========================================================= */
@@ -556,6 +669,173 @@
                     color: inherit !important;
                     text-decoration: none !important;
                 }
+                /* =====================================================
+                 🖨️ VERSO — PARTENAIRES
+                 ===================================================== */
+
+                .partners {
+                    
+                    break-before: page;
+                    page-break-before: always;
+
+                    display: grid !important;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 4mm;
+
+                    margin-top: 0 !important;
+                    padding: 4mm !important;
+
+                    background: #fff !important;
+                    border: 1px solid #ccc !important;
+                    border-radius: 8px !important;
+                }
+
+
+                /* ---------- INTRODUCTION ---------- */
+
+                .partners-intro {
+                    grid-column: 1 / -1;
+
+                    padding: 0 0 2mm !important;
+                    margin: 0 !important;
+
+                    border-bottom: 1px solid #ddd;
+                }
+
+                .partners-intro h2 {
+                    margin: 0 0 1mm !important;
+                    font-size: 18pt !important;
+                    color: var(--rouge-fonce) !important;
+                }
+
+                .partners-intro p {
+                    margin: 0 !important;
+                    font-size: 10pt !important;
+                }
+
+
+                /* ---------- CARTES PARTENAIRES ---------- */
+
+                .partner-card {
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+
+                    margin: 0 !important;
+                }
+
+
+                /* ---------- EN-TÊTES ---------- */
+
+                .partner-card .card-header {
+                    padding: 3mm !important;
+                    margin: 0 !important;
+
+                    background: #f1f1f1 !important;
+
+                    border-left: 4px solid #ccc;
+                    border-radius: 6px 6px 0 0;
+                }
+
+                .partner-card .card-header h2 {
+                    margin: 0 !important;
+                    font-size: 13pt !important;
+                }
+
+                .partner-card .card-header p {
+                    margin: 1mm 0 0 !important;
+                    font-size: 8pt !important;
+                }
+
+
+                /* ---------- CONTENU ---------- */
+
+                .partner-card .card-content {
+                    padding: 3mm !important;
+
+                    background: #fff !important;
+
+                    border: 1px solid #e5e5e5;
+                    border-top: none;
+
+                    border-radius: 0 0 6px 6px;
+                }
+
+                .partner-card .info {
+                    margin-bottom: 2.5mm !important;
+                }
+
+                .partner-card .label {
+                    font-size: 7.5pt !important;
+                    margin-bottom: .5mm !important;
+                }
+
+                .partner-card .value {
+                    font-size: 9.5pt !important;
+                    line-height: 1.25;
+                }
+
+
+                /* ---------- SESSION ---------- */
+
+                .partner-card .session-label {
+                    display: block;
+
+                    margin: 1mm 0 2mm !important;
+                    padding: 1mm 1.5mm !important;
+
+                    background: #f7edf4 !important;
+                    border-left: 3px solid var(--rouge-fonce);
+
+                    color: var(--rouge-fonce) !important;
+
+                    font-size: 8pt !important;
+                    font-weight: 700;
+
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+
+                /* ---------- AUTRES PARTENAIRES ---------- */
+
+                .partner-card.small {
+                    align-self: start;
+                }
+
+                .partner-card.small .card-content {
+                    padding: 2.5mm !important;
+                }
+
+                .partner-card.small .info {
+                    margin-bottom: 0 !important;
+                }
+
+
+                /* ---------- LIENS ---------- */
+
+                .partners a {
+                    color: inherit !important;
+                    text-decoration: none !important;
+                }
+
+
+                /* ---------- FOOTER ---------- */
+
+                footer {
+                    display: block !important;
+
+                    margin-top: 3mm !important;
+                    padding-top: 2mm !important;
+
+                    border-top: 1px solid #ddd;
+
+                    text-align: center;
+
+                    font-size: 7.5pt !important;
+                    line-height: 1.2;
+
+                    color: #777 !important;
+                }
             }
 
         </style>
@@ -598,10 +878,10 @@
 
 
             <!-- =========================
-                 FORMATIONS
+                 FORMATIONS avec FOBAGRA 
             ========================== -->
 
-            <section class="formations">
+            <section class="formations avec Fobagra">
 
 
                 <!-- SAPIENS -->
@@ -667,6 +947,16 @@
 
                             <div class="value">
                                 Mercredi + Vendredi
+                            </div>
+
+                        </div>
+                        <div class="info">
+
+                            <span class="label">
+                                🕘 Horaire
+                            </span>
+                            <div class="value">
+                                9h - 12h
                             </div>
 
                         </div>
@@ -754,6 +1044,17 @@
 
                         </div>
 
+                        <div class="info">
+
+                            <span class="label">
+                                🕘 Horaire
+                            </span>
+                            <div class="value">
+                                9h30 - 12h30
+                            </div>
+
+                        </div>
+
 
                         <div class="memo">
 
@@ -836,7 +1137,16 @@
                             </div>
 
                         </div>
+                        <div class="info">
 
+                            <span class="label">
+                                🕘 Horaire
+                            </span>
+                            <div class="value">
+                                9h - 12h
+                            </div>
+
+                        </div>
 
                         <div class="memo">
 
@@ -924,7 +1234,244 @@
 
             </section>
 
+
+
+            <!-- =========================
+                 FORMATIONS avec autres partenaires du projet 
+            ========================== -->
+
+            <section class="partners">
+
+                <div class="partners-intro">
+                    <h2>🤝 Bon à savoir</h2>
+                    <p>Cette formation est également organisée par plusieurs partenaires :</p>
+                </div>
+
+
+                <!-- =========================
+                     BRUXELLES FORMATION
+                ========================== -->
+
+                <article class="partner-card">
+
+                    <header class="card-header">
+                        <h2>
+                            <a href="https://www.bruxellesformation.brussels/catalogue-de-formations/parcours-dinitiation-bureautique-et-certification-tosa/"
+                               target="_blank">
+                                Bruxelles Formation
+                            </a>
+                        </h2>
+                        <p>Bruxelles</p>
+                    </header>
+
+                    <div class="card-content">
+
+                        <div class="info">
+                            <span class="label">📍 Adresse</span>
+                            <div class="value">
+                                Boulevard Bischoffsheim 22-25
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <span class="label">🎓 Formation</span>
+                            <div class="value">
+                                Les formations sont organisées de manière régulière
+                                tout au long de l’année.
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <span class="label">📅 Jours</span>
+                            <div class="value">
+                                MA + ME + JEU + VEND
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <span class="label">🕘 Horaire</span>
+                            <div class="value">
+                                Matin : 9h - 12h30<br>
+                                OU<br>
+                                Après-midi : 13h - 16h30
+                            </div>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================
+                     CEFAID — SESSION 1
+                ========================== -->
+
+                <article class="partner-card">
+
+                    <header class="card-header">
+                        <h2>CEFAID</h2>
+                        <p>Saint-Gilles</p>
+                    </header>
+
+                    <div class="card-content">
+
+                        <div class="info">
+                            <span class="label">📍 Adresse</span>
+                            <div class="value">
+                                Avenue du parc 89
+                            </div>
+                        </div>
+
+                        <div class="session-label">
+                            SESSION 1
+                        </div>
+
+                        <div class="info">
+                            <span class="label">🎓 Formation</span>
+                            <div class="value">
+                                28 sept. → 16 oct. 2026
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <span class="label">📅 Jours</span>
+                            <div class="value">
+                                LU + MA + ME + JE + VEND
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <span class="label">🕘 Horaire</span>
+                            <div class="value">
+                                9h - 13h
+                            </div>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================
+                     CEFAID — SESSION 2
+                ========================== -->
+
+                <article class="partner-card">
+
+                    <header class="card-header">
+                        <h2>CEFAID</h2>
+                        <p>Saint-Gilles</p>
+                    </header>
+
+                    <div class="card-content">
+
+                        <div class="info">
+                            <span class="label">📍 Adresse</span>
+                            <div class="value">
+                                Avenue du parc 89
+                            </div>
+                        </div>
+
+                        <div class="session-label">
+                            SESSION 2
+                        </div>
+
+                        <div class="info">
+                            <span class="label">🎓 Formation</span>
+                            <div class="value">
+                                23 oct. → 13 nov. 2026
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <span class="label">📅 Jours</span>
+                            <div class="value">
+                                LU + MA + ME + JE + VEND
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <span class="label">🕘 Horaire</span>
+                            <div class="value">
+                                13h - 17h
+                            </div>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================
+                     AUTRES PARTENAIRES
+                ========================== -->
+
+                <article class="partner-card small">
+
+                    <header class="card-header">
+                        <h2>Arc</h2>
+                        <p>Bruxelles</p>
+                    </header>
+
+                    <div class="card-content">
+                        <div class="info">
+                            <span class="label">📍 Adresse</span>
+                            <div class="value">
+                                Rue de l’Association 20
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="partner-card small">
+
+                    <header class="card-header">
+                        <h2>Koekeltech</h2>
+                        <p>Koekelberg</p>
+                    </header>
+
+                    <div class="card-content">
+                        <div class="info">
+                            <span class="label">📍 Adresse</span>
+                            <div class="value">
+                                Rue de l’Eglise Sainte-Anne 114
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="partner-card small">
+
+                    <header class="card-header">
+                        <h2>Maks</h2>
+                        <p>Anderlecht</p>
+                    </header>
+
+                    <div class="card-content">
+                        <div class="info">
+                            <span class="label">📍 Adresse</span>
+                            <div class="value">
+                                Rue Georges Moreau 110
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+            </section>
+
+
         </main>
 
+        <footer>
+
+            <div>
+                <em><a href="https://fobagra.net/" target="blank" title="FOBAGRA a.s.b.l.">FOBAGRA</a> a.s.b.l. &copy; 2026</em>
+            </div>
+        </footer>
     </body>
 </html>
