@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="isabelle.nani@fobagra.net">
+        <meta name="author" content="isabelle.nani@fobagra.net">
         <title>TOSA DigComp à BXL</title>
 
         <style>
@@ -264,6 +264,40 @@
                 font-size: 1.3rem;
             }
 
+
+            /* =========================
+   SAPIENS — INSCRIPTIONS CLÔTURÉES
+========================= */
+
+            .sapiens-statut {
+                margin: 0;
+                padding: 1rem 1.25rem;
+                background: #eef1fc;
+                border-left: 5px solid var(--sapiens);
+                text-align: center;
+            }
+
+            .sapiens-statut p {
+                margin: .5rem 0 .25rem;
+                color: var(--gris);
+            }
+
+            .sapiens-statut strong {
+                display: block;
+                font-size: 1.05rem;
+                color: var(--texte);
+            }
+
+            .statut-badge {
+                display: inline-block;
+                padding: .35rem .7rem;
+                border-radius: 999px;
+                background: #666;
+                color: white;
+                font-size: .78rem;
+                font-weight: 700;
+                letter-spacing: .04em;
+            }
 
             /* =========================
                RESPONSIVE
@@ -674,7 +708,7 @@
                  ===================================================== */
 
                 .partners {
-                    
+
                     break-before: page;
                     page-break-before: always;
 
@@ -836,6 +870,30 @@
 
                     color: #777 !important;
                 }
+
+                /* ---------- STATUT SAPIENS ---------- */
+
+                .sapiens-statut {
+                    padding: 3mm !important;
+                    background: #eef1fc !important;
+                    border-left: 4px solid #95ABF4 !important;
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+
+                .statut-badge {
+                    padding: 1mm 2mm !important;
+                    font-size: 8pt !important;
+                }
+
+                .sapiens-statut p {
+                    margin: 1mm 0 !important;
+                    font-size: 9pt !important;
+                }
+
+                .sapiens-statut strong {
+                    font-size: 10pt !important;
+                }
             }
 
         </style>
@@ -896,8 +954,22 @@
 
                     </header>
 
+                    <div class="sapiens-statut">
+                        <span class="statut-badge">INSCRIPTIONS CLÔTURÉES</span>
+
+                        <p>
+                            Cette session est complète.
+                        </p>
+
+                        <strong>
+                            📅 Prochaine session : janvier 2027
+                        </strong>
+                    </div>
+
 
                     <div class="card-content">
+
+
 
                         <div class="info">
 
@@ -919,9 +991,10 @@
                             </span>
 
                             <div class="dates value">
-                             <!--   <span>➡️ 25 août — matin</span>-->
+                                <!--   <span>➡️ 25 août — matin</span>
                                 <span>➡️ 1er septembre — matin</span>
-								<span>➡️ 8 septembre — matin</span>
+                                <span>➡️ 8 septembre — matin</span>-->
+                                <span>➡️ janvier 2027</span>
                             </div>
 
                         </div>
@@ -934,7 +1007,7 @@
                             </span>
 
                             <div class="value">
-                                18 septembre → 11 décembre 2026
+                                janvier → avril 2027
                             </div>
 
                         </div>
@@ -1013,9 +1086,9 @@
                             </span>
 
                             <div class="dates value">
-                                
-                                <span>➡️ 7 septembre — matin</span>
-								<span>➡️ 14 septembre — matin</span>
+
+                                <!--<span>➡️ 7 septembre — matin</span>-->
+                                <span>➡️ 14 septembre — matin</span>
                             </div>
 
                         </div>
@@ -1108,9 +1181,11 @@
                             </span>
 
                             <div class="dates value">
-                                <span>➡️ 25 août — après-midi</span>
-                                <span>➡️ 1er septembre — après-midi</span>
-								<span>➡️ 10 septembre — matin</span>
+                                <!--  <span>➡️ 25 août — après-midi</span>
+                                  <span>➡️ 1er septembre — après-midi</span>
+                                  <span>➡️ 10 septembre — matin</span>-->
+
+                                <span>➡️ 17 septembre — matin</span>
                             </div>
 
                         </div>
@@ -1238,247 +1313,266 @@
             </section>
 
 
-
             <!-- =========================
                  FORMATIONS avec autres partenaires du projet 
             ========================== -->
 
-            <section id="partners" class="partners">
 
+
+            <section class="partners">
                 <div class="partners-intro">
+
                     <h2>🤝 Bon à savoir</h2>
+
                     <p>Cette formation est également organisée par plusieurs partenaires :</p>
+
                 </div>
 
 
-                <!-- =========================
-                     BRUXELLES FORMATION
-                ========================== -->
-
-                <article class="partner-card">
-
-                    <header class="card-header">
-                        <h2>
-                            <a href="https://www.bruxellesformation.brussels/catalogue-de-formations/parcours-dinitiation-bureautique-et-certification-tosa/"
-                               target="_blank">
-                                Bruxelles Formation
-                            </a>
-                        </h2>
-                        <p>Bruxelles</p>
-                    </header>
-
-                    <div class="card-content">
-
-                        <div class="info">
-                            <span class="label">📍 Adresse</span>
-                            <div class="value">
-                                Boulevard Bischoffsheim 22-25
-                            </div>
-                        </div>
-
-                        <div class="info">
-                            <span class="label">🎓 Formation</span>
-                            <div class="value">
-                                Les formations sont organisées de manière régulière
-                                tout au long de l’année.
-                            </div>
-                        </div>
-
-                        <div class="info">
-                            <span class="label">📅 Jours</span>
-                            <div class="value">
-                                MA + ME + JEU + VEND
-                            </div>
-                        </div>
-
-                        <div class="info">
-                            <span class="label">🕘 Horaire</span>
-                            <div class="value">
-                                Après-midi : 13h - 16h30 (du 15 sept. au 14 oct. 26)
-                                <br>
-                                OU
-                                <br>
-                                Matin : 9h - 12h30 (du 20 oct. au 19 nov. 26)
-                            </div>
-						</div>
-                    </div>
-						
-
-                </article>
 
 
-                <!-- =========================
-                     CEFAID — SESSION 1
-                ========================== -->
+                <header class="card-header">
 
-                <article class="partner-card">
+                    <h2><a href="https://www.bruxellesformation.brussels/catalogue-de-formations/parcours-dinitiation-bureautique-et-certification-tosa/" target="_blank">Bruxelles Formation</a></h2>
 
-                    <header class="card-header">
-                        <h2>CEFAID</h2>
-                        <p>Saint-Gilles</p>
-                    </header>
+                    <p>Bruxelles</p>
 
-                    <div class="card-content">
 
-                        <div class="info">
-                            <span class="label">📍 Adresse</span>
-                            <div class="value">
-                                Avenue du parc 89
-                            </div>
-                        </div>
 
-                        <div class="session-label">
-                            SESSION 1
-                        </div>
+                </header>
 
-                        <div class="info">
-                            <span class="label">🎓 Formation</span>
-                            <div class="value">
-                                28 sept. → 16 oct. 2026
-                            </div>
-                        </div>
 
-                        <div class="info">
-                            <span class="label">📅 Jours</span>
-                            <div class="value">
-                                LU + MA + ME + JE + VEND
-                            </div>
-                        </div>
+                <div class="card-content">
 
-                        <div class="info">
-                            <span class="label">🕘 Horaire</span>
-                            <div class="value">
-                                9h - 13h
-                            </div>
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            Boulevard Bischoffsheim N°22-25
                         </div>
 
                     </div>
 
-                </article>
 
 
-                <!-- =========================
-                     CEFAID — SESSION 2
-                ========================== -->
+                    <div class="info">
 
-                <article class="partner-card">
+                        <span class="label">
+                            🎓 Formation
+                        </span>
 
-                    <header class="card-header">
-                        <h2>CEFAID</h2>
-                        <p>Saint-Gilles</p>
-                    </header>
-
-                    <div class="card-content">
-
-                        <div class="info">
-                            <span class="label">📍 Adresse</span>
-                            <div class="value">
-                                Avenue du parc 89
-                            </div>
-                        </div>
-
-                        <div class="session-label">
-                            SESSION 2
-                        </div>
-
-                        <div class="info">
-                            <span class="label">🎓 Formation</span>
-                            <div class="value">
-                                23 oct. → 13 nov. 2026
-                            </div>
-                        </div>
-
-                        <div class="info">
-                            <span class="label">📅 Jours</span>
-                            <div class="value">
-                                LU + MA + ME + JE + VEND
-                            </div>
-                        </div>
-
-                        <div class="info">
-                            <span class="label">🕘 Horaire</span>
-                            <div class="value">
-                                13h - 17h
-                            </div>
+                        <div class="value">
+                            Les formations sont organisées de manière régulière tout au long de l’année.
                         </div>
 
                     </div>
 
-                </article>
 
+                    <div class="info">
 
-                <!-- =========================
-                     AUTRES PARTENAIRES
-                ========================== -->
+                        <span class="label">
+                            📅 Jours
+                        </span>
 
-                <article class="partner-card small">
-
-                    <header class="card-header">
-                        <h2>Arc</h2>
-                        <p>Bruxelles</p>
-                    </header>
-
-                    <div class="card-content">
-                        <div class="info">
-                            <span class="label">📍 Adresse</span>
-                            <div class="value">
-                                Rue de l’Association 20
-                            </div>
+                        <div class="value">
+                            MA + ME + JEU + VEND
                         </div>
+
                     </div>
 
-                </article>
+                    <div class="info">
 
-
-                <article class="partner-card small">
-
-                    <header class="card-header">
-                        <h2>
-							<a href="https://www.koekeltech.be/digital-competences/" target="_blank">
-								Koekeltech
-							</a>	
-						</h2>
-                        <p>Koekelberg</p>
-                    </header>
-
-                    <div class="card-content">
-                        <div class="info">
-                            <span class="label">📍 Adresse</span>
-                            <div class="value">
-                                Rue de l’Eglise Sainte-Anne 114
-                            </div>
+                        <span class="label">
+                            🕘 Horaire
+                        </span>
+                        <div class="value">
+                            Matin : 9h - 12h30 <br>OU<br> Après-midi : 13h - 16h30
                         </div>
+
                     </div>
 
-                </article>
+                </div>
 
 
-                <article class="partner-card small">
+                <header class="card-header">
 
-                    <header class="card-header">
-                        <h2>Maks</h2>
-                        <p>Anderlecht</p>
-                    </header>
+                    <h2>CEFAID</h2>
 
-                    <div class="card-content">
-                        <div class="info">
-                            <span class="label">📍 Adresse</span>
-                            <div class="value">
-                                Rue Georges Moreau 110
-                            </div>
+                    <p>Saint-Gilles</p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            Avenue du parc, 89
                         </div>
+
                     </div>
 
-                </article>
+                    <div class="session-label">SESSION 1</div>
+
+                    <div class="info">
+
+                        <span class="label">
+                            🎓 Formation
+                        </span>
+
+                        <div class="value">
+                            28 sept. → 16 oct. 2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="label">
+                            📅 Jours
+                        </span>
+
+                        <div class="value">
+                            LU + MA + ME + JE + VEND
+                        </div>
+                    </div>
+                    <div class="info">
+
+                        <span class="label">
+                            🕘 Horaire
+                        </span>
+                        <div class="value">
+                            9h - 13h
+                        </div>
+
+                    </div>
+
+                    <!--  <hr>  -->
+
+                    <div class="session-label">SESSION 2</div>
+
+                    <div class="info">
+
+                        <span class="label">
+                            🎓 Formation
+                        </span>
+
+                        <div class="value">
+                            23 oct. → 13 nov. 2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="label">
+                            📅 Jours
+                        </span>
+
+                        <div class="value">
+                            LU + MA + ME + JE + VEND
+                        </div>
+                    </div>
+                    <div class="info">
+
+                        <span class="label">
+                            🕘 Horaire
+                        </span>
+                        <div class="value">
+                            13h - 17h
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <header class="card-header">
+
+                    <h2>Arc </h2>
+
+                    <p>Bruxelles </p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            rue de l’Association 20
+                        </div>
+
+                    </div>
+                </div>
+                <header class="card-header">
+
+                    <h2>Koekeltech </h2>
+
+                    <p>Koekelberg </p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            114 rue de l’Eglise Sainte-Anne
+                        </div>
+
+                    </div>
+                </div>
+                <header class="card-header">
+
+                    <h2>Maks</h2>
+
+                    <p>Anderlecht </p>
+
+                </header>
+
+
+                <div class="card-content">
+
+                    <div class="info">
+
+                        <span class="label">
+                            📍 Adresse
+                        </span>
+
+                        <div class="value">
+                            rue Georges Moreau 110
+                        </div>
+
+                    </div>
+                </div>
 
             </section>
-
-
         </main>
 
         <footer>
+
             <div>
-                <p><img src="https://www.fobagra.net/assets/images/fobagra-1-166x169.jpg" width="32px" style="vertical-align: middle;">&nbsp;<a href="https://fobagra.net/" target="blank" title="FOBAGRA a.s.b.l.">FOBAGRA</a> a.s.b.l. &copy; 2026</p>
+                <em><a href="https://fobagra.net/" target="blank" title="FOBAGRA a.s.b.l.">FOBAGRA</a> a.s.b.l. &copy; 2026</em>
             </div>
         </footer>
     </body>
